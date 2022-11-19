@@ -23,8 +23,8 @@ export class EmployeeService {
   updateEmployee(id:number,employee:Employee){
     return this.httpClient.put(this.baseUrl+"/"+id,employee);
   }
-  deleteEmployee(id:number){
-    return this.httpClient.delete(this.baseUrl+"/"+id);
+  deleteEmployee(id:number):Observable<Employee>{
+    return this.httpClient.delete<Employee>(this.baseUrl+"/"+id);
   }
 
 }
