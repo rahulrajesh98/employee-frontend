@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Employee } from '../employee';
 import { EmployeeService } from '../employee.service';
 
@@ -34,6 +34,8 @@ export class EmployeeListComponent implements OnInit {
     console.log(data);
     })
     this.getAllEmployees;
-    
+  }
+  viewEmployeeDetails(id:number){
+    this.router.navigate(['/employee-details/',id])
   }
 }
